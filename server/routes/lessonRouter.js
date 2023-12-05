@@ -5,6 +5,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 router.post("/", authMiddleware, lessonController.create);
 router.get("/:chapterId", authMiddleware, lessonController.getByChapter);
+router.get("/current", authMiddleware, lessonController.getCurrent);
 router.get("/:id", lessonController.getOne);
 
 module.exports = router;
